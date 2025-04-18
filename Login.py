@@ -29,6 +29,7 @@ password = st.text_input("Ingrese su contraseña", type="password")
 if st.button("Ingresar"):
     if verificar_usuario(nombreUsuario, password):
         st.session_state.logueado = True
+        st.session_state.name = nombreUsuario  # Guardar el nombre de usuario en el estado
         st.rerun()
     else:
         st.error("Nombre de usuario o contraseña incorrectos")
